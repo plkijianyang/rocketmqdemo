@@ -22,7 +22,7 @@ public class ClientStart {
 		DefaultMQProducer producer = new DefaultMQProducer("producer1");
 		producer.setVipChannelEnabled(false);
 		// 设置NameServer地址,此处应改为实际NameServer地址，多个地址之间用；分隔
-		producer.setNamesrvAddr("119.23.211.22:9876");
+		producer.setNamesrvAddr("140.143.244.92:9876");
 
 		// 调用start()方法启动一个producer实例
 		producer.start();
@@ -32,7 +32,7 @@ public class ClientStart {
 			// 封装消息
 			Message msg = new Message("TopicTest",// topic
 					"TagA",// tag
-					("Hello RocketMQ").getBytes(RemotingHelper.DEFAULT_CHARSET)// body
+					("测试消息的消费").getBytes(RemotingHelper.DEFAULT_CHARSET)// body
 			);
 			// 调用producer的send()方法发送消息
 			// 这里调用的是同步的方式，所以会有返回结果
